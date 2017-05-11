@@ -41,7 +41,7 @@ const landingIMG_path = __dirname + '/public/indexLandingNOLA.html';
 app.use(public_path);
 
 
-app.get('/main/nola/point2point', function (request, response) {
+app.get('/main/nola/*', function (request, response) {
 
   response.sendFile(mainNOLA_path, function (error) {
     if (error) {
@@ -51,14 +51,14 @@ app.get('/main/nola/point2point', function (request, response) {
 });
 
 
-app.get('/main/nola/accessibility', function (request, response) {
+// app.get('/main/nola/accessibility', function (request, response) {
 
-  response.sendFile(mainNOLA_path, function (error) {
-    if (error) {
-      console.log(error);
-    }
-  });
-});
+//   response.sendFile(mainNOLA_path, function (error) {
+//     if (error) {
+//       console.log(error);
+//     }
+//   });
+// });
 
 app.get('/landingNOLA', function (request, response) {
   // app.use(publicLandingNOLA_path);
