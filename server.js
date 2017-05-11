@@ -34,6 +34,9 @@ const public_path = express.static(__dirname + '/public');
 
 const mainNOLA_path = __dirname + '/public/index.html';
 const landingNOLA_path = __dirname + '/public/indexLandingNOLA.html';
+const landingSF_path = __dirname + '/public/indexLandingSF.html';
+
+
 const landingIMG_path = __dirname + '/public/indexLandingNOLA.html';
 
 
@@ -51,24 +54,22 @@ app.get('/main/nola/*', function (request, response) {
 });
 
 
-// app.get('/main/nola/accessibility', function (request, response) {
-
-//   response.sendFile(mainNOLA_path, function (error) {
-//     if (error) {
-//       console.log(error);
-//     }
-//   });
-// });
-
 app.get('/landingNOLA', function (request, response) {
-  // app.use(publicLandingNOLA_path);
-
   response.sendFile(landingNOLA_path, function (error) {
     if (error) {
       console.log(error);
     }
   });
 });
+
+app.get('/landingSF', function (request, response) {
+  response.sendFile(landingSF_path, function (error) {
+    if (error) {
+      console.log(error);
+    }
+  });
+});
+
 
 
 
