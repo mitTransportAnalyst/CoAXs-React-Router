@@ -34,10 +34,11 @@ const public_path = express.static(__dirname + '/public');
 
 const mainNOLA_path = __dirname + '/public/index.html';
 const mainSF_path = __dirname + '/public/indexSF.html';
+const mainATL_path = __dirname + '/public/indexATL.html';
 
 const landingNOLA_path = __dirname + '/public/indexLandingNOLA.html';
 const landingSF_path = __dirname + '/public/indexLandingSF.html';
-
+const landingATL_path = __dirname + '/public/indexLandingATL.html';
 
 const landingIMG_path = __dirname + '/public/indexLandingNOLA.html';
 
@@ -65,6 +66,16 @@ app.get('/main/sf/*', function (request, response) {
 });
 
 
+app.get('/main/atl/*', function (request, response) {
+
+  response.sendFile(mainATL_path, function (error) {
+    if (error) {
+      console.log(error);
+    }
+  });
+});
+
+
 
 app.get('/landingNOLA', function (request, response) {
   response.sendFile(landingNOLA_path, function (error) {
@@ -78,6 +89,14 @@ app.get('/landingNOLA', function (request, response) {
 
 app.get('/landingSF', function (request, response) {
   response.sendFile(landingSF_path, function (error) {
+    if (error) {
+      console.log(error);
+    }
+  });
+});
+
+app.get('/landingATL', function (request, response) {
+  response.sendFile(landingATL_path, function (error) {
     if (error) {
       console.log(error);
     }
